@@ -143,7 +143,7 @@
   .skills h4 { font-weight: 600; font-size: 16px; margin: 10px 0 12px; }
   .skills ul { list-style: none; color: var(--ink-2); font-size: 14.5px; display: grid; gap: 4px; }
 
-  .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: clamp(56px, 8vw, 96px) 0 clamp(72px, 10vw, 128px); }
+  .principles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: clamp(56px, 8vw, 96px) 0 clamp(72px, 10vw, 128px); }
   .principles > div { background: var(--bg); padding: 28px; }
   .principles h5 { font-weight: 600; font-size: 19px; letter-spacing: -.02em; margin: 12px 0 8px; }
   .principles p { color: var(--ink-2); font-size: 15px; }
@@ -157,6 +157,7 @@
   .timeline li:first-child { border-top: 1px solid var(--line); }
   .timeline b { font-weight: 600; }
   .timeline span.t { color: var(--ink-2); }
+  .timeline li > .mono:last-child { text-transform: none; letter-spacing: .02em; }
 
   /* ---------- Contact ---------- */
   .contact { padding-block: clamp(80px, 12vw, 152px) clamp(56px, 8vw, 96px); }
@@ -444,7 +445,6 @@
 
       <div class="principles reveal">
         <div><span class="mono">Principle</span><h5>Privacy by default</h5><p>No accounts unless they’re needed. No trackers. Data stays on the device whenever possible.</p></div>
-        <div><span class="mono">Principle</span><h5>Works offline</h5><p>Local storage and on-device models mean the app works without a network.</p></div>
         <div><span class="mono">Principle</span><h5>Calm interfaces</h5><p>Fewer, clearer choices, especially in stressful moments like labor or a 6 a.m. alarm.</p></div>
       </div>
     </div>
