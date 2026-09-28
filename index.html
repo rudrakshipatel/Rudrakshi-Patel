@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rudrakshi Patel</title>
+<meta name="description" content="Rudrakshi Patel — developer building careful, privacy-first apps for Android, iOS and the web.">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121210" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1b18'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23f6f4ef' text-anchor='middle'%3ERP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --surface: #efece5;
+    --ink: #1b1b18;
+    --ink-2: #55544e;
+    --ink-3: #8a8880;
+    --line: #dedad0;
+    --accent: #b0532f;
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --max: 1120px;
+    --gutter: clamp(20px, 5vw, 48px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121210;
+      --surface: #1a1a17;
+      --ink: #ecebe6;
+      --ink-2: #a9a79f;
+      --ink-3: #75736c;
+      --line: #2a2a26;
+      --accent: #e08a62;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 17px/1.6 var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--ink); color: var(--bg); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+  .mono { font-family: var(--mono); font-size: 12.5px; letter-spacing: .02em; color: var(--ink-3); }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: saturate(160%) blur(12px);
+    -webkit-backdrop-filter: saturate(160%) blur(12px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s;
+  }
+  nav.scrolled { border-bottom-color: var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-family: var(--serif); font-size: 22px; letter-spacing: -.01em; }
+  .links { display: flex; gap: clamp(18px, 3vw, 32px); font-size: 14.5px; color: var(--ink-2); }
+  .links a { position: relative; transition: color .2s; }
+  .links a:hover { color: var(--ink); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: clamp(80px, 14vw, 168px) clamp(64px, 10vw, 120px); }
+  .hero > .mono { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 32px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #3f9a5e; box-shadow: 0 0 0 4px color-mix(in srgb, #3f9a5e 18%, transparent); }
+  h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(44px, 7.4vw, 96px);
+    line-height: 1.02; letter-spacing: -.025em;
+    max-width: 14ch;
+  }
+  h1 em { font-style: italic; color: var(--ink-2); }
+  .lede { margin-top: 36px; max-width: 54ch; font-size: clamp(17px, 1.6vw, 19px); color: var(--ink-2); }
+  .hero-meta { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 12px 40px; }
+  .hero-meta div { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta b { font-weight: 500; font-size: 15px; }
+
+  /* ---------- Section heads ---------- */
+  section { border-top: 1px solid var(--line); }
+  .head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 28px 0 clamp(40px, 6vw, 64px);
+  }
+  .head h2 { font: 500 14px/1 var(--sans); letter-spacing: .01em; }
+
+  /* ---------- Work ---------- */
+  .project {
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px);
+    align-items: center;
+    padding-bottom: clamp(64px, 9vw, 112px);
+  }
+  .project:nth-child(even) .tile { order: 2; }
+  .tile {
+    position: relative; aspect-ratio: 4 / 3; border-radius: 14px; overflow: hidden;
+    display: grid; place-items: center;
+    transition: transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .project:hover .tile { transform: scale(.985); }
+  .tile svg { width: 100%; height: 100%; display: block; }
+  .info .num { margin-bottom: 18px; display: flex; gap: 14px; }
+  .info h3 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(34px, 4vw, 48px); line-height: 1.05; letter-spacing: -.02em;
+  }
+  .info .kicker { margin-top: 8px; color: var(--ink-2); font-size: 16px; }
+  .info p.desc { margin-top: 22px; color: var(--ink-2); max-width: 46ch; }
+  .info ul.points { list-style: none; margin-top: 22px; display: grid; gap: 8px; font-size: 15px; }
+  .info ul.points li { padding-left: 20px; position: relative; }
+  .info ul.points li::before { content: ""; position: absolute; left: 0; top: .78em; width: 10px; height: 1px; background: var(--ink-3); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 26px; }
+  .tags span {
+    font-family: var(--mono); font-size: 11.5px; color: var(--ink-2);
+    border: 1px solid var(--line); border-radius: 99px; padding: 4px 10px;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 28px; font-size: 14.5px; font-weight: 500; }
+  .actions a { display: inline-flex; align-items: center; gap: 6px; border-bottom: 1px solid var(--line); padding-bottom: 3px; transition: border-color .2s, gap .2s; }
+  .actions a:hover { border-color: var(--ink); gap: 9px; }
+  .actions a.muted { color: var(--ink-3); border-color: transparent; pointer-events: none; font-weight: 400; }
+
+  /* ---------- About ---------- */
+  .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 6vw, 96px); padding-bottom: clamp(72px, 10vw, 128px); }
+  .about-grid .statement {
+    font-family: var(--serif); font-size: clamp(28px, 3.2vw, 40px); line-height: 1.18; letter-spacing: -.015em;
+  }
+  .about-grid .statement em { color: var(--ink-2); }
+  .about-copy p { color: var(--ink-2); }
+  .about-copy p + p { margin-top: 16px; }
+
+  .skills { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+  .skills > div { padding: 28px 24px 32px 0; }
+  .skills > div + div { padding-left: 24px; border-left: 1px solid var(--line); }
+  .skills h4 { font-weight: 500; font-size: 15px; margin: 10px 0 12px; }
+  .skills ul { list-style: none; color: var(--ink-2); font-size: 14.5px; display: grid; gap: 4px; }
+
+  .principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin: clamp(56px, 8vw, 96px) 0 clamp(72px, 10vw, 128px); }
+  .principles > div { background: var(--bg); padding: 28px; }
+  .principles h5 { font-family: var(--serif); font-weight: 400; font-size: 24px; margin: 12px 0 8px; }
+  .principles p { color: var(--ink-2); font-size: 15px; }
+
+  /* ---------- Timeline ---------- */
+  .timeline { list-style: none; padding-bottom: clamp(72px, 10vw, 128px); }
+  .timeline li {
+    display: grid; grid-template-columns: 140px 1fr auto; gap: 24px; align-items: baseline;
+    padding: 20px 0; border-bottom: 1px solid var(--line);
+  }
+  .timeline li:first-child { border-top: 1px solid var(--line); }
+  .timeline b { font-weight: 500; }
+  .timeline span.t { color: var(--ink-2); }
+
+  /* ---------- Contact ---------- */
+  .contact { padding-block: clamp(80px, 12vw, 152px) clamp(56px, 8vw, 96px); }
+  .contact h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(48px, 8vw, 112px); line-height: 1; letter-spacing: -.03em;
+  }
+  .contact h2 em { color: var(--ink-2); }
+  .contact-row { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border-radius: 99px; font-size: 15px; font-weight: 500;
+    border: 1px solid var(--line); transition: background .2s, color .2s, border-color .2s;
+  }
+  .btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .btn.primary:hover { background: transparent; color: var(--ink); }
+  .btn:not(.primary):hover { border-color: var(--ink); }
+
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 28px; padding-bottom: 40px; }
+
+  /* ---------- Reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .tile, .project:hover .tile { transition: none; transform: none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .project, .about-grid { grid-template-columns: 1fr; }
+    .project:nth-child(even) .tile { order: 0; }
+    .skills { grid-template-columns: 1fr 1fr; }
+    .skills > div:nth-child(3) { padding-left: 0; border-left: 0; }
+    .skills > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .principles { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .links a.hide-sm { display: none; }
+    .skills { grid-template-columns: 1fr; }
+    .skills > div, .skills > div + div { padding: 24px 0; border-left: 0; }
+    .skills > div + div { border-top: 1px solid var(--line); }
+    .timeline li { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Rudrakshi Patel — home">Rudrakshi Patel</a>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#journey" class="hide-sm">Journey</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <header class="hero wrap">
+    <p class="mono reveal"><span class="dot" aria-hidden="true"></span>Open to internships &amp; collaborations</p>
+    <h1 class="reveal">I build software that’s <em>quiet, careful</em> and kind to the people using it.</h1>
+    <p class="lede reveal">I’m Rudrakshi — a developer making apps for Android, iOS and the web. My projects range from a hackathon marketplace for Indian artisans to a daily medical puzzle game and two privacy-first iPhone apps.</p>
+    <div class="hero-meta reveal">
+      <div><span class="mono">Focus</span><b>Mobile &amp; web apps</b></div>
+      <div><span class="mono">Working with</span><b>Flutter · Next.js · iOS</b></div>
+      <div><span class="mono">Shipped</span><b>5 projects since 2025</b></div>
+    </div>
+  </header>
+
+  <!-- ================= WORK ================= -->
+  <section id="work">
+    <div class="wrap">
+      <div class="head"><h2>Selected work</h2><span class="mono">2025 — 2026</span></div>
+
+      <!-- 01 Hastakala -->
+      <article class="project reveal">
+        <div class="tile" style="background:#fbf7ef" aria-hidden="true">
+          <svg viewBox="0 0 400 300">
+            <rect width="400" height="300" fill="#f1e7d6"/>
+            <circle cx="200" cy="330" r="190" fill="#22402e"/>
+            <circle cx="200" cy="330" r="150" fill="none" stroke="#fbf7ef" stroke-opacity=".18" stroke-width="1"/>
+            <path d="M150 210 Q150 150 200 130 Q250 150 250 210 Z" fill="#b55a34"/>
+            <path d="M166 210 Q166 162 200 148 Q234 162 234 210" fill="none" stroke="#fbf7ef" stroke-width="2" stroke-opacity=".7"/>
+            <rect x="170" y="118" width="60" height="14" rx="7" fill="#d98a3d"/>
+            <g fill="#c0402a"><circle cx="92" cy="84" r="6"/><circle cx="312" cy="70" r="4"/><circle cx="330" cy="120" r="3"/></g>
+            <text x="200" y="262" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#fbf7ef" letter-spacing="3">HASTAKALA</text>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="num mono"><span>01</span><span>Android · Hackathon</span><span>2026</span></div>
+          <h3>Hastakala</h3>
+          <p class="kicker">Smart India Hackathon 2026 · Problem statement SIH26090</p>
+          <p class="desc">A two-sided marketplace that helps Indian artisans sell their craft directly to buyers. Artisans can list products just by photographing them and talking. The Flutter Android app works alongside the web version.</p>
+          <ul class="points">
+            <li>AI camera cataloging: on-device image labeling picks the craft category and cuts out the background</li>
+            <li>Voice-first “Add Product” flow and multilingual interface for artisans</li>
+            <li>Seller dashboard with a profile-strength ring, sparkline stats, inquiries and QR storefront</li>
+            <li>Offline demo mode, with Supabase, Beckn and push-notification services ready to connect</li>
+          </ul>
+          <div class="tags"><span>Flutter</span><span>Dart</span><span>ML Kit</span><span>Supabase</span><span>Firebase</span></div>
+          <div class="actions">
+            <a href="https://github.com/rudrakshipatel/SIHBB-android" target="_blank" rel="noopener">View source <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 DocRiddles -->
+      <article class="project reveal">
+        <div class="tile" aria-hidden="true">
+          <svg viewBox="0 0 400 300">
+            <defs><linearGradient id="dr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d9488"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs>
+            <rect width="400" height="300" fill="url(#dr)"/>
+            <g stroke="#fff" stroke-opacity=".08">
+              <path d="M0 75H400M0 150H400M0 225H400M100 0V300M200 0V300M300 0V300"/>
+            </g>
+            <polyline points="20,160 120,160 142,160 158,112 176,208 194,86 212,184 226,160 380,160" fill="none" stroke="#f97316" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="380" cy="160" r="7" fill="#f97316"/>
+            <g font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#fff" fill-opacity=".75">
+              <rect x="28" y="28" width="118" height="28" rx="14" fill="#fff" fill-opacity=".12"/>
+              <text x="42" y="46">CLUE 1 / 6</text>
+              <text x="28" y="262">Today’s case · Cardiology</text>
+            </g>
+            <g transform="translate(290 226)" fill="#fff"><rect width="18" height="18" rx="3" fill="#fb923c"/><rect x="22" width="18" height="18" rx="3" fill-opacity=".3"/><rect x="44" width="18" height="18" rx="3" fill-opacity=".3"/><rect x="66" width="18" height="18" rx="3" fill="#2dd4bf"/></g>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="num mono"><span>02</span><span>Web · Game</span><span>2026</span></div>
+          <h3>DocRiddles</h3>
+          <p class="kicker">A daily medical mystery game</p>
+          <p class="desc">There’s one clinical case each day. You reveal clues one at a time and try to name the diagnosis in as few as you can, a bit like Wordle for medicine. When the game ends you get an explanation of the case and an emoji grid to share.</p>
+          <ul class="points">
+            <li>Wrong guesses reveal the next clue automatically. Streaks, win rate and clue distribution are saved locally, so no account is needed</li>
+            <li>Hidden admin panel for scheduling cases, with bulk JSON upload that queues one case per day</li>
+            <li>Supabase with row-level security. The public API never sends the answer to the browser</li>
+          </ul>
+          <div class="tags"><span>Next.js 14</span><span>TypeScript</span><span>Supabase</span><span>Tailwind</span><span>Framer Motion</span></div>
+          <div class="actions">
+            <a href="https://doc-riddles.vercel.app" target="_blank" rel="noopener">Play today’s case <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 Chirpy -->
+      <article class="project reveal">
+        <div class="tile" aria-hidden="true">
+          <svg viewBox="0 0 400 300">
+            <defs>
+              <radialGradient id="ch" cx=".5" cy="-.1" r="1.1"><stop offset="0" stop-color="#2e1065"/><stop offset=".25" stop-color="#1e1b4b"/><stop offset=".6" stop-color="#0b0817"/><stop offset="1" stop-color="#050308"/></radialGradient>
+              <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#ch)"/>
+            <circle cx="200" cy="140" r="130" fill="url(#glow)"/>
+            <g fill="#fff"><circle cx="48" cy="60" r="1.2"/><circle cx="312" cy="36" r="1"/><circle cx="140" cy="28" r="1.3"/><circle cx="352" cy="96" r="1.1"/><circle cx="78" cy="132" r=".9"/><circle cx="250" cy="56" r=".8"/></g>
+            <circle cx="200" cy="140" r="62" fill="none" stroke="#a78bfa" stroke-width="2"/>
+            <path d="M200 140 V104 M200 140 L226 152" stroke="#f5f3ff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="200" cy="140" r="4" fill="#f5f3ff"/>
+            <g font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#f5f3ff" text-anchor="middle">
+              <rect x="138" y="228" width="124" height="34" rx="17" fill="#8b5cf6" fill-opacity=".22" stroke="#8b5cf6" stroke-opacity=".5"/>
+              <text x="200" y="250">17 × 4 = ?</text>
+            </g>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="num mono"><span>03</span><span>iOS · App</span><span>2026</span></div>
+          <h3>Chirpy</h3>
+          <p class="kicker">A puzzle alarm clock for iPhone</p>
+          <p class="desc">An alarm that won’t stop until you solve a puzzle, and one puzzle makes you get out of bed and scan a real object. There’s no account, analytics or tracking, and all your data stays on the phone.</p>
+          <ul class="points">
+            <li>Five wake-up puzzles: Math, Typing, Color Match, Find the Color and Scan an Object</li>
+            <li>The scan puzzle uses Apple’s Vision framework on the device. Each frame is checked and then thrown away</li>
+            <li>Privacy policy and support site written and designed alongside the app</li>
+          </ul>
+          <div class="tags"><span>iOS</span><span>Apple Vision</span><span>On-device ML</span><span>Privacy-first</span></div>
+          <div class="actions">
+            <a href="https://rudrakshipatel.github.io/chirpy-privacy/" target="_blank" rel="noopener">Privacy site <span aria-hidden="true">↗</span></a>
+            <a href="https://rudrakshipatel.github.io/chirpy-privacy/support.html" target="_blank" rel="noopener">Support <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 Contractions -->
+      <article class="project reveal">
+        <div class="tile" aria-hidden="true">
+          <svg viewBox="0 0 400 300">
+            <rect width="400" height="300" fill="#0d0d0f"/>
+            <g fill="none" stroke="#f2a1be">
+              <circle cx="200" cy="130" r="44" stroke-width="2"/>
+              <circle cx="200" cy="130" r="70" stroke-opacity=".35"/>
+              <circle cx="200" cy="130" r="98" stroke-opacity=".16"/>
+            </g>
+            <circle cx="200" cy="130" r="32" fill="#f2a1be"/>
+            <text x="200" y="136" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="15" font-weight="600" fill="#0d0d0f">01:04</text>
+            <g fill="#f2a1be">
+              <rect x="60"  y="248" width="30" height="10" rx="5" fill-opacity=".35"/>
+              <rect x="108" y="248" width="40" height="10" rx="5" fill-opacity=".45"/>
+              <rect x="164" y="248" width="46" height="10" rx="5" fill-opacity=".6"/>
+              <rect x="224" y="248" width="52" height="10" rx="5" fill-opacity=".8"/>
+              <rect x="288" y="248" width="56" height="10" rx="5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="num mono"><span>04</span><span>iOS · App</span><span>2026</span></div>
+          <h3>Contractions</h3>
+          <p class="kicker">A labor contraction timer for iPhone</p>
+          <p class="desc">A calm app for a stressful moment. You tap once when a contraction starts and again when it ends. The app records durations and intervals and shows the pattern on a timeline.</p>
+          <ul class="points">
+            <li>Timeline of each session, plus a 5-1-1 guideline prompt with clear medical disclaimers</li>
+            <li>Hospital bag checklist and a “loved ones” quick-contact list</li>
+            <li>Data stays on the device. Subscriptions and restore go through the App Store</li>
+          </ul>
+          <div class="tags"><span>iOS</span><span>In-app purchases</span><span>Local storage</span><span>Health UX</span></div>
+          <div class="actions">
+            <a href="https://rudrakshipatel.github.io/contractions-site/privacy.html" target="_blank" rel="noopener">Privacy <span aria-hidden="true">↗</span></a>
+            <a href="https://rudrakshipatel.github.io/contractions-site/support.html" target="_blank" rel="noopener">Support <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05 C Programming -->
+      <article class="project reveal">
+        <div class="tile" aria-hidden="true">
+          <svg viewBox="0 0 400 300">
+            <rect width="400" height="300" fill="#1b1b18"/>
+            <g fill="#3a3a35"><circle cx="26" cy="24" r="5"/><circle cx="44" cy="24" r="5"/><circle cx="62" cy="24" r="5"/></g>
+            <g font-family="ui-monospace,Menlo,monospace" font-size="14">
+              <text x="28" y="72"  fill="#75736c">// 110 programs, one at a time</text>
+              <text x="28" y="104" fill="#e08a62">int</text><text x="60" y="104" fill="#ecebe6">fib(</text><text x="96" y="104" fill="#e08a62">int</text><text x="128" y="104" fill="#ecebe6">n) {</text>
+              <text x="56" y="130" fill="#ecebe6"><tspan fill="#9fb8ff">if</tspan> (n &lt; 2) <tspan fill="#9fb8ff">return</tspan> n;</text>
+              <text x="56" y="156" fill="#ecebe6"><tspan fill="#9fb8ff">return</tspan> fib(n-1) + fib(n-2);</text>
+              <text x="28" y="182" fill="#ecebe6">}</text>
+              <text x="28" y="232" fill="#8fc79a">$ ./fib</text>
+              <text x="28" y="256" fill="#a9a79f">0 1 1 2 3 5 8 13 21 34</text>
+              <rect x="206" y="244" width="9" height="16" fill="#ecebe6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="num mono"><span>05</span><span>Foundations</span><span>2025</span></div>
+          <h3>C Programming</h3>
+          <p class="kicker">110 programs, from first loop to file I/O</p>
+          <p class="desc">This is where I started. It’s a collection of C programs that goes from printing numbers to recursion, pointers, structs, matrix work and reading and writing files.</p>
+          <ul class="points">
+            <li>Recursion: factorial, Fibonacci, and loops rewritten as recursion</li>
+            <li>Pointers and call-by-reference, 2D arrays and matrix multiplication and transposes</li>
+            <li>Structs for student, bank and cricketer records, plus file handling with CSV export</li>
+          </ul>
+          <div class="tags"><span>C</span><span>Algorithms</span><span>Data structures</span></div>
+          <div class="actions">
+            <a href="https://github.com/rudrakshipatel/C-Programming" target="_blank" rel="noopener">Browse the programs <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="wrap">
+      <div class="head"><h2>About</h2><span class="mono">Approach &amp; toolkit</span></div>
+
+      <div class="about-grid reveal">
+        <p class="statement">I like projects where the details matter: a clue revealed at the right moment, an alarm that <em>actually</em> gets you up, a privacy policy that’s short enough to read.</p>
+        <div class="about-copy">
+          <p>I work across the whole product. That means designing the interface, building the app, setting up the database and writing the support pages that go with it. My projects so far include cross-platform Flutter, native iPhone apps and full-stack web built on Next.js and Supabase.</p>
+          <p>Wherever I can, I build offline-first, keep data on the device and use on-device ML instead of sending data to a server. Software should earn trust and not ask for it.</p>
+        </div>
+      </div>
+
+      <div class="skills reveal">
+        <div><span class="mono">01</span><h4>Mobile</h4><ul><li>Flutter &amp; Dart</li><li>iOS apps</li><li>Apple Vision</li><li>Google ML Kit</li></ul></div>
+        <div><span class="mono">02</span><h4>Web</h4><ul><li>Next.js &amp; React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Framer Motion</li></ul></div>
+        <div><span class="mono">03</span><h4>Backend &amp; cloud</h4><ul><li>Supabase &amp; Postgres</li><li>Row-level security</li><li>Firebase messaging</li><li>Vercel · GitHub Pages</li></ul></div>
+        <div><span class="mono">04</span><h4>Foundations</h4><ul><li>C</li><li>Algorithms</li><li>Data structures</li><li>UI &amp; product design</li></ul></div>
+      </div>
+
+      <div class="principles reveal">
+        <div><span class="mono">Principle</span><h5>Privacy by default</h5><p>No accounts unless they’re needed. No trackers. Data stays on the device whenever possible.</p></div>
+        <div><span class="mono">Principle</span><h5>Works offline</h5><p>Demo modes, local storage and on-device models mean the app works without a network.</p></div>
+        <div><span class="mono">Principle</span><h5>Calm interfaces</h5><p>Fewer, clearer choices, especially in stressful moments like labor or a 6 a.m. alarm.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= JOURNEY ================= -->
+  <section id="journey">
+    <div class="wrap">
+      <div class="head"><h2>Journey</h2><span class="mono">Most recent first</span></div>
+      <ol class="timeline reveal">
+        <li><span class="mono">Sep 2026</span><span><b>Hastakala for Android</b> <span class="t">— Smart India Hackathon 2026</span></span><span class="mono">Flutter</span></li>
+        <li><span class="mono">Jun 2026</span><span><b>Chirpy</b> <span class="t">— puzzle alarm clock for iPhone</span></span><span class="mono">iOS</span></li>
+        <li><span class="mono">Jun 2026</span><span><b>Contractions</b> <span class="t">— labor contraction timer</span></span><span class="mono">iOS</span></li>
+        <li><span class="mono">Apr 2026</span><span><b>DocRiddles</b> <span class="t">— daily medical mystery game, live on Vercel</span></span><span class="mono">Web</span></li>
+        <li><span class="mono">Sep 2025</span><span><b>C Programming</b> <span class="t">— started with 110 programs</span></span><span class="mono">C</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="wrap contact">
+      <p class="mono reveal" style="margin-bottom:24px">Contact</p>
+      <h2 class="reveal">Let’s build something <em>thoughtful.</em></h2>
+      <div class="contact-row reveal">
+        <a class="btn primary" href="mailto:rudrakshikpatel2007@gmail.com">rudrakshikpatel2007@gmail.com</a>
+        <a class="btn" href="https://github.com/rudrakshipatel" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© <span id="y">2026</span> Rudrakshi Patel</span>
+    <a class="mono" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+</script>
+</body>
+</html>
