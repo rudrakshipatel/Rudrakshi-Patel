@@ -109,6 +109,14 @@
   }
   .project:hover .tile { transform: scale(.985); }
   .tile svg { width: 100%; height: 100%; display: block; }
+  .tile.shot { place-items: start center; padding-top: 8%; }
+  .tile.shot img {
+    display: block; width: 44%; height: auto;
+    border-radius: 28px; border: 6px solid #0b0b0a;
+    box-shadow: 0 1px 0 1px rgba(255,255,255,.08) inset, 0 40px 70px -25px rgba(0,0,0,.55);
+    transition: transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .project:hover .tile.shot img { transform: translateY(-6px); }
   .info .num { margin-bottom: 18px; display: flex; gap: 14px; text-transform: none; letter-spacing: .02em; }
   .info h3 {
     font-weight: 700;
@@ -181,6 +189,7 @@
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .tile, .project:hover .tile { transition: none; transform: none; }
+    .tile.shot img, .project:hover .tile.shot img { transition: none; transform: none; }
   }
 
   /* ---------- Responsive ---------- */
@@ -195,6 +204,7 @@
   @media (max-width: 560px) {
     body { font-size: 16px; }
     .links a.hide-sm { display: none; }
+    .tile.shot img { width: 52%; border-width: 5px; border-radius: 22px; }
     .skills { grid-template-columns: 1fr; }
     .skills > div, .skills > div + div { padding: 24px 0; border-left: 0; }
     .skills > div + div { border-top: 1px solid var(--line); }
@@ -237,21 +247,8 @@
 
       <!-- 01 Cortex -->
       <article class="project reveal">
-        <div class="tile" aria-hidden="true">
-          <svg viewBox="0 0 400 300">
-            <defs><linearGradient id="cx" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d7f5ec"/><stop offset="1" stop-color="#ffe3cc"/></linearGradient></defs>
-            <rect width="400" height="300" fill="url(#cx)"/>
-            <rect x="40" y="34" width="320" height="30" rx="15" fill="#1e2a44"/>
-            <rect x="44" y="38" width="210" height="22" rx="11" fill="#14b8a6"/>
-            <text x="58" y="54" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#fff">+100 XP · streak 12</text>
-            <g font-family="ui-monospace,Menlo,monospace" font-size="12" text-anchor="middle">
-              <g transform="translate(40 96)"><rect width="148" height="64" rx="14" fill="#fff"/><text x="74" y="28" fill="#0d9488">01</text><text x="74" y="46" fill="#1e2a44">History</text></g>
-              <g transform="translate(212 96)"><rect width="148" height="64" rx="14" fill="#fff"/><text x="74" y="28" fill="#0d9488">02</text><text x="74" y="46" fill="#1e2a44">Order tests</text></g>
-              <g transform="translate(40 176)"><rect width="148" height="64" rx="14" fill="#fff"/><text x="74" y="28" fill="#0d9488">03</text><text x="74" y="46" fill="#1e2a44">Diagnose</text></g>
-              <g transform="translate(212 176)"><rect width="148" height="64" rx="14" fill="#f97316"/><text x="74" y="28" fill="#fff" fill-opacity=".8">04</text><text x="74" y="46" fill="#fff">Treat</text></g>
-            </g>
-            <text x="200" y="274" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-weight="600" font-size="15" fill="#1e2a44" fill-opacity=".7">mentored by Dr. Vix 🦊</text>
-          </svg>
+        <div class="tile shot" style="background:linear-gradient(145deg,#d7f5ec 0%,#fbeee0 60%,#ffd9bd 100%)">
+          <img src="assets/cortex.webp" alt="Cortex app home screen showing the daily case “The Heavy Haul”" width="540" height="1045" loading="lazy" decoding="async">
         </div>
         <div class="info">
           <div class="num mono"><span>01</span><span>iOS · Game</span><span>2026</span></div>
@@ -308,22 +305,8 @@
 
       <!-- 03 DocRiddles -->
       <article class="project reveal">
-        <div class="tile" aria-hidden="true">
-          <svg viewBox="0 0 400 300">
-            <defs><linearGradient id="dr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d9488"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs>
-            <rect width="400" height="300" fill="url(#dr)"/>
-            <g stroke="#fff" stroke-opacity=".08">
-              <path d="M0 75H400M0 150H400M0 225H400M100 0V300M200 0V300M300 0V300"/>
-            </g>
-            <polyline points="20,160 120,160 142,160 158,112 176,208 194,86 212,184 226,160 380,160" fill="none" stroke="#f97316" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
-            <circle cx="380" cy="160" r="7" fill="#f97316"/>
-            <g font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#fff" fill-opacity=".75">
-              <rect x="28" y="28" width="118" height="28" rx="14" fill="#fff" fill-opacity=".12"/>
-              <text x="42" y="46">CLUE 1 / 6</text>
-              <text x="28" y="262">Today’s case · Cardiology</text>
-            </g>
-            <g transform="translate(290 226)" fill="#fff"><rect width="18" height="18" rx="3" fill="#fb923c"/><rect x="22" width="18" height="18" rx="3" fill-opacity=".3"/><rect x="44" width="18" height="18" rx="3" fill-opacity=".3"/><rect x="66" width="18" height="18" rx="3" fill="#2dd4bf"/></g>
-          </svg>
+        <div class="tile shot" style="background:linear-gradient(145deg,#14b8a6 0%,#0f766e 100%)">
+          <img src="assets/docriddles.webp" alt="DocRiddles daily case screen showing the first two clues of a nephrology case" width="540" height="970" loading="lazy" decoding="async">
         </div>
         <div class="info">
           <div class="num mono"><span>03</span><span>Web · Game</span><span>2026</span></div>
@@ -381,23 +364,8 @@
       </article>
       <!-- 05 Chirpy -->
       <article class="project reveal">
-        <div class="tile" aria-hidden="true">
-          <svg viewBox="0 0 400 300">
-            <defs>
-              <radialGradient id="ch" cx=".5" cy="-.1" r="1.1"><stop offset="0" stop-color="#2e1065"/><stop offset=".25" stop-color="#1e1b4b"/><stop offset=".6" stop-color="#0b0817"/><stop offset="1" stop-color="#050308"/></radialGradient>
-              <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
-            </defs>
-            <rect width="400" height="300" fill="url(#ch)"/>
-            <circle cx="200" cy="140" r="130" fill="url(#glow)"/>
-            <g fill="#fff"><circle cx="48" cy="60" r="1.2"/><circle cx="312" cy="36" r="1"/><circle cx="140" cy="28" r="1.3"/><circle cx="352" cy="96" r="1.1"/><circle cx="78" cy="132" r=".9"/><circle cx="250" cy="56" r=".8"/></g>
-            <circle cx="200" cy="140" r="62" fill="none" stroke="#a78bfa" stroke-width="2"/>
-            <path d="M200 140 V104 M200 140 L226 152" stroke="#f5f3ff" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="200" cy="140" r="4" fill="#f5f3ff"/>
-            <g font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#f5f3ff" text-anchor="middle">
-              <rect x="138" y="228" width="124" height="34" rx="17" fill="#8b5cf6" fill-opacity=".22" stroke="#8b5cf6" stroke-opacity=".5"/>
-              <text x="200" y="250">17 × 4 = ?</text>
-            </g>
-          </svg>
+        <div class="tile shot" style="background:radial-gradient(120% 90% at 50% 0%,#3b1d7a 0%,#1e1b4b 40%,#0b0817 80%)">
+          <img src="assets/chirpy.webp" alt="Chirpy alarm list with puzzle alarms for weekdays and weekends" width="540" height="1045" loading="lazy" decoding="async">
         </div>
         <div class="info">
           <div class="num mono"><span>05</span><span>iOS · Android</span><span>2026</span></div>
