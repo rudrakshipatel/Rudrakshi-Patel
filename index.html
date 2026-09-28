@@ -81,7 +81,7 @@
     line-height: 1.05; letter-spacing: -.035em;
     max-width: 16ch;
   }
-  h1 em, .contact h2 em, .statement em { font-style: normal; color: var(--accent); }
+  h1 em, .contact h2 em { font-style: normal; color: var(--accent); }
   .lede { margin-top: 36px; max-width: 54ch; font-size: clamp(17px, 1.6vw, 19px); color: var(--ink-2); }
   .hero-meta { margin-top: 56px; display: flex; flex-wrap: wrap; gap: 12px 40px; }
   .hero-meta div { display: flex; flex-direction: column; gap: 4px; }
@@ -130,11 +130,8 @@
   .actions a.muted { color: var(--ink-3); border-color: transparent; pointer-events: none; font-weight: 400; }
 
   /* ---------- About ---------- */
-  .about-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: clamp(32px, 6vw, 96px); padding-bottom: clamp(72px, 10vw, 128px); }
-  .about-grid .statement {
-    font-weight: 600; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.3; letter-spacing: -.025em;
-  }
-  .about-copy p { color: var(--ink-2); }
+  .about-grid { display: grid; grid-template-columns: 1fr; max-width: 760px; padding-bottom: clamp(72px, 10vw, 128px); }
+  .about-copy p { color: var(--ink-2); font-size: clamp(17px, 1.6vw, 19px); }
   .about-copy p + p { margin-top: 16px; }
 
   .skills { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
@@ -429,7 +426,6 @@
       <div class="head"><h2>About</h2><span class="mono">Approach &amp; toolkit</span></div>
 
       <div class="about-grid reveal">
-        <p class="statement">I like projects where the details matter: a clue revealed at the right moment, an alarm that <em>actually</em> gets you up, a privacy policy that’s short enough to read.</p>
         <div class="about-copy">
           <p>I work across the whole product. That means designing the interface, building the app, setting up the database and writing the support pages that go with it. My projects so far include native SwiftUI apps, cross-platform Flutter and full-stack web built on Next.js and Supabase.</p>
           <p>Wherever I can, I build offline-first, keep data on the device and use on-device ML instead of sending data to a server. Software should earn trust and not ask for it.</p>
