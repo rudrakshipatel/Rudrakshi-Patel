@@ -225,52 +225,91 @@
   <header class="hero wrap">
     <p class="mono reveal"><span class="dot" aria-hidden="true"></span>Open to internships &amp; collaborations</p>
     <h1 class="reveal">I build software that’s <em>quiet, careful</em> and kind to the people using it.</h1>
-    <p class="lede reveal">I’m Rudrakshi — a developer making apps for Android, iOS and the web. My projects range from a hackathon marketplace for Indian artisans to a daily medical puzzle game and two privacy-first iPhone apps.</p>
+    <p class="lede reveal">I’m Rudrakshi — a developer making apps for Android, iOS and the web. My projects include a clinical-reasoning game for future doctors, a shared event camera, a daily medical puzzle and two calm, privacy-first apps.</p>
     <div class="hero-meta reveal">
       <div><span class="mono">Focus</span><b>Mobile &amp; web apps</b></div>
-      <div><span class="mono">Working with</span><b>Flutter · Next.js · iOS</b></div>
-      <div><span class="mono">Shipped</span><b>5 projects since 2025</b></div>
+      <div><span class="mono">Working with</span><b>SwiftUI · Flutter · Next.js</b></div>
+      <div><span class="mono">Shipped</span><b>5 products in 2026</b></div>
     </div>
   </header>
 
   <!-- ================= WORK ================= -->
   <section id="work">
     <div class="wrap">
-      <div class="head"><h2>Selected work</h2><span class="mono">2025 — 2026</span></div>
+      <div class="head"><h2>Selected work</h2><span class="mono">2026</span></div>
 
-      <!-- 01 Hastakala -->
+      <!-- 01 Cortex -->
       <article class="project reveal">
-        <div class="tile" style="background:#fbf7ef" aria-hidden="true">
+        <div class="tile" aria-hidden="true">
           <svg viewBox="0 0 400 300">
-            <rect width="400" height="300" fill="#f1e7d6"/>
-            <circle cx="200" cy="330" r="190" fill="#22402e"/>
-            <circle cx="200" cy="330" r="150" fill="none" stroke="#fbf7ef" stroke-opacity=".18" stroke-width="1"/>
-            <path d="M150 210 Q150 150 200 130 Q250 150 250 210 Z" fill="#b55a34"/>
-            <path d="M166 210 Q166 162 200 148 Q234 162 234 210" fill="none" stroke="#fbf7ef" stroke-width="2" stroke-opacity=".7"/>
-            <rect x="170" y="118" width="60" height="14" rx="7" fill="#d98a3d"/>
-            <g fill="#c0402a"><circle cx="92" cy="84" r="6"/><circle cx="312" cy="70" r="4"/><circle cx="330" cy="120" r="3"/></g>
-            <text x="200" y="262" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#fbf7ef" letter-spacing="3">HASTAKALA</text>
+            <defs><linearGradient id="cx" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d7f5ec"/><stop offset="1" stop-color="#ffe3cc"/></linearGradient></defs>
+            <rect width="400" height="300" fill="url(#cx)"/>
+            <rect x="40" y="34" width="320" height="30" rx="15" fill="#1e2a44"/>
+            <rect x="44" y="38" width="210" height="22" rx="11" fill="#14b8a6"/>
+            <text x="58" y="54" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#fff">+100 XP · streak 12</text>
+            <g font-family="ui-monospace,Menlo,monospace" font-size="12" text-anchor="middle">
+              <g transform="translate(40 96)"><rect width="148" height="64" rx="14" fill="#fff"/><text x="74" y="28" fill="#0d9488">01</text><text x="74" y="46" fill="#1e2a44">History</text></g>
+              <g transform="translate(212 96)"><rect width="148" height="64" rx="14" fill="#fff"/><text x="74" y="28" fill="#0d9488">02</text><text x="74" y="46" fill="#1e2a44">Order tests</text></g>
+              <g transform="translate(40 176)"><rect width="148" height="64" rx="14" fill="#fff"/><text x="74" y="28" fill="#0d9488">03</text><text x="74" y="46" fill="#1e2a44">Diagnose</text></g>
+              <g transform="translate(212 176)"><rect width="148" height="64" rx="14" fill="#f97316"/><text x="74" y="28" fill="#fff" fill-opacity=".8">04</text><text x="74" y="46" fill="#fff">Treat</text></g>
+            </g>
+            <text x="200" y="274" text-anchor="middle" font-family="Georgia,serif" font-size="15" fill="#1e2a44" fill-opacity=".7">mentored by Dr. Vix 🦊</text>
           </svg>
         </div>
         <div class="info">
-          <div class="num mono"><span>01</span><span>Android · Hackathon</span><span>2026</span></div>
-          <h3>Hastakala</h3>
-          <p class="kicker">Smart India Hackathon 2026 · Problem statement SIH26090</p>
-          <p class="desc">A two-sided marketplace that helps Indian artisans sell their craft directly to buyers. Artisans can list products just by photographing them and talking. The Flutter Android app works alongside the web version.</p>
+          <div class="num mono"><span>01</span><span>iOS · Game</span><span>2026</span></div>
+          <h3>Cortex</h3>
+          <p class="kicker">The game that makes you a better doctor</p>
+          <p class="desc">A clinical-reasoning game where you’re the only doctor on duty. You take a history, order tests, reach a diagnosis and choose the treatment, and you’re scored on how well you reasoned rather than on what you memorised. Dr. Vix, a fox mentor, guides you through each case.</p>
           <ul class="points">
-            <li>AI camera cataloging: on-device image labeling picks the craft category and cuts out the background</li>
-            <li>Voice-first “Add Product” flow and multilingual interface for artisans</li>
-            <li>Seller dashboard with a profile-strength ring, sparkline stats, inquiries and QR storefront</li>
-            <li>Offline demo mode, with Supabase, Beckn and push-notification services ready to connect</li>
+            <li>Case flow of patient, tests, results, diagnosis, treatment and outcome across 12+ departments. Ordering too many tests costs you</li>
+            <li>Up to 100 XP per case, daily streaks, leagues, an energy system and time-limited emergency cases</li>
+            <li>Native SwiftUI app with a companion admin app. The backend runs on Supabase edge functions, scheduled jobs and push notifications</li>
+            <li>Marketing site and launch waitlist live at cortexcases.com</li>
           </ul>
-          <div class="tags"><span>Flutter</span><span>Dart</span><span>ML Kit</span><span>Supabase</span><span>Firebase</span></div>
+          <div class="tags"><span>SwiftUI</span><span>Swift</span><span>StoreKit</span><span>Supabase</span><span>Edge functions</span></div>
           <div class="actions">
-            <a href="https://github.com/rudrakshipatel/SIHBB-android" target="_blank" rel="noopener">View source <span aria-hidden="true">↗</span></a>
+            <a href="https://www.cortexcases.com/" target="_blank" rel="noopener">Join the waitlist <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </article>
 
-      <!-- 02 DocRiddles -->
+      <!-- 02 Auree -->
+      <article class="project reveal">
+        <div class="tile" aria-hidden="true">
+          <svg viewBox="0 0 400 300">
+            <rect width="400" height="300" fill="#14110a"/>
+            <rect x="0" y="70" width="400" height="150" fill="#0e0b07"/>
+            <g fill="#14110a"><rect x="12" y="78" width="14" height="10" rx="2"/><rect x="52" y="78" width="14" height="10" rx="2"/><rect x="92" y="78" width="14" height="10" rx="2"/><rect x="132" y="78" width="14" height="10" rx="2"/><rect x="172" y="78" width="14" height="10" rx="2"/><rect x="212" y="78" width="14" height="10" rx="2"/><rect x="252" y="78" width="14" height="10" rx="2"/><rect x="292" y="78" width="14" height="10" rx="2"/><rect x="332" y="78" width="14" height="10" rx="2"/><rect x="372" y="78" width="14" height="10" rx="2"/>
+              <rect x="12" y="202" width="14" height="10" rx="2"/><rect x="52" y="202" width="14" height="10" rx="2"/><rect x="92" y="202" width="14" height="10" rx="2"/><rect x="132" y="202" width="14" height="10" rx="2"/><rect x="172" y="202" width="14" height="10" rx="2"/><rect x="212" y="202" width="14" height="10" rx="2"/><rect x="252" y="202" width="14" height="10" rx="2"/><rect x="292" y="202" width="14" height="10" rx="2"/><rect x="332" y="202" width="14" height="10" rx="2"/><rect x="372" y="202" width="14" height="10" rx="2"/></g>
+            <rect x="24"  y="100" width="100" height="90" rx="6" fill="#39342a"/>
+            <rect x="150" y="100" width="100" height="90" rx="6" fill="#39342a"/>
+            <rect x="276" y="100" width="100" height="90" rx="6" fill="#e9dfc9"/>
+            <circle cx="326" cy="138" r="16" fill="#d6c9ab"/><path d="M290 190 L316 160 L336 176 L362 150 L376 166 V190 Z" fill="#b7ac95"/>
+            <g font-family="ui-monospace,Menlo,monospace" font-size="11" fill="#7c7563" text-anchor="middle"><text x="74" y="150">HIDDEN</text><text x="200" y="150">HIDDEN</text></g>
+            <text x="28" y="44" font-family="Georgia,serif" font-size="22" fill="#e9dfc9">Maya &amp; Arjun’s Wedding</text>
+            <text x="28" y="262" font-family="ui-monospace,Menlo,monospace" font-size="12" fill="#b7ac95">1,204 moments · reveal in 1d 23m</text>
+          </svg>
+        </div>
+        <div class="info">
+          <div class="num mono"><span>02</span><span>iOS · App Clip · Web</span><span>2026</span></div>
+          <h3>Auree</h3>
+          <p class="kicker">The shared event camera</p>
+          <p class="desc">Auree turns an event into a shared roll of film. Every guest shoots from their own angle, and nothing is visible until the host’s reveal moment. Then the whole roll develops at once, for everyone.</p>
+          <ul class="points">
+            <li>The host sets the roll: guest limit, shots per person and when it reveals (live, when the event ends, or a delayed drop)</li>
+            <li>Guests never download anything. They join by QR code or link, through an App Clip on iPhone or the browser on Android</li>
+            <li>Free for up to 5 guests, then a one-time purchase per event, with no subscription</li>
+            <li>Landing site, invite links and an SEO wedding-ideas journal at auree.live</li>
+          </ul>
+          <div class="tags"><span>iOS</span><span>App Clips</span><span>Supabase</span><span>Vercel</span><span>SEO</span></div>
+          <div class="actions">
+            <a href="https://auree.live" target="_blank" rel="noopener">Visit auree.live <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03 DocRiddles -->
       <article class="project reveal">
         <div class="tile" aria-hidden="true">
           <svg viewBox="0 0 400 300">
@@ -290,7 +329,7 @@
           </svg>
         </div>
         <div class="info">
-          <div class="num mono"><span>02</span><span>Web · Game</span><span>2026</span></div>
+          <div class="num mono"><span>03</span><span>Web · Game</span><span>2026</span></div>
           <h3>DocRiddles</h3>
           <p class="kicker">A daily medical mystery game</p>
           <p class="desc">There’s one clinical case each day. You reveal clues one at a time and try to name the diagnosis in as few as you can, a bit like Wordle for medicine. When the game ends you get an explanation of the case and an emoji grid to share.</p>
@@ -305,45 +344,6 @@
           </div>
         </div>
       </article>
-
-      <!-- 03 Chirpy -->
-      <article class="project reveal">
-        <div class="tile" aria-hidden="true">
-          <svg viewBox="0 0 400 300">
-            <defs>
-              <radialGradient id="ch" cx=".5" cy="-.1" r="1.1"><stop offset="0" stop-color="#2e1065"/><stop offset=".25" stop-color="#1e1b4b"/><stop offset=".6" stop-color="#0b0817"/><stop offset="1" stop-color="#050308"/></radialGradient>
-              <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
-            </defs>
-            <rect width="400" height="300" fill="url(#ch)"/>
-            <circle cx="200" cy="140" r="130" fill="url(#glow)"/>
-            <g fill="#fff"><circle cx="48" cy="60" r="1.2"/><circle cx="312" cy="36" r="1"/><circle cx="140" cy="28" r="1.3"/><circle cx="352" cy="96" r="1.1"/><circle cx="78" cy="132" r=".9"/><circle cx="250" cy="56" r=".8"/></g>
-            <circle cx="200" cy="140" r="62" fill="none" stroke="#a78bfa" stroke-width="2"/>
-            <path d="M200 140 V104 M200 140 L226 152" stroke="#f5f3ff" stroke-width="3" stroke-linecap="round"/>
-            <circle cx="200" cy="140" r="4" fill="#f5f3ff"/>
-            <g font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#f5f3ff" text-anchor="middle">
-              <rect x="138" y="228" width="124" height="34" rx="17" fill="#8b5cf6" fill-opacity=".22" stroke="#8b5cf6" stroke-opacity=".5"/>
-              <text x="200" y="250">17 × 4 = ?</text>
-            </g>
-          </svg>
-        </div>
-        <div class="info">
-          <div class="num mono"><span>03</span><span>iOS · App</span><span>2026</span></div>
-          <h3>Chirpy</h3>
-          <p class="kicker">A puzzle alarm clock for iPhone</p>
-          <p class="desc">An alarm that won’t stop until you solve a puzzle, and one puzzle makes you get out of bed and scan a real object. There’s no account, analytics or tracking, and all your data stays on the phone.</p>
-          <ul class="points">
-            <li>Five wake-up puzzles: Math, Typing, Color Match, Find the Color and Scan an Object</li>
-            <li>The scan puzzle uses Apple’s Vision framework on the device. Each frame is checked and then thrown away</li>
-            <li>Privacy policy and support site written and designed alongside the app</li>
-          </ul>
-          <div class="tags"><span>iOS</span><span>Apple Vision</span><span>On-device ML</span><span>Privacy-first</span></div>
-          <div class="actions">
-            <a href="https://rudrakshipatel.github.io/chirpy-privacy/" target="_blank" rel="noopener">Privacy site <span aria-hidden="true">↗</span></a>
-            <a href="https://rudrakshipatel.github.io/chirpy-privacy/support.html" target="_blank" rel="noopener">Support <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </article>
-
       <!-- 04 Contractions -->
       <article class="project reveal">
         <div class="tile" aria-hidden="true">
@@ -382,38 +382,40 @@
           </div>
         </div>
       </article>
-
-      <!-- 05 C Programming -->
+      <!-- 05 Chirpy -->
       <article class="project reveal">
         <div class="tile" aria-hidden="true">
           <svg viewBox="0 0 400 300">
-            <rect width="400" height="300" fill="#1b1b18"/>
-            <g fill="#3a3a35"><circle cx="26" cy="24" r="5"/><circle cx="44" cy="24" r="5"/><circle cx="62" cy="24" r="5"/></g>
-            <g font-family="ui-monospace,Menlo,monospace" font-size="14">
-              <text x="28" y="72"  fill="#75736c">// 110 programs, one at a time</text>
-              <text x="28" y="104" fill="#e08a62">int</text><text x="60" y="104" fill="#ecebe6">fib(</text><text x="96" y="104" fill="#e08a62">int</text><text x="128" y="104" fill="#ecebe6">n) {</text>
-              <text x="56" y="130" fill="#ecebe6"><tspan fill="#9fb8ff">if</tspan> (n &lt; 2) <tspan fill="#9fb8ff">return</tspan> n;</text>
-              <text x="56" y="156" fill="#ecebe6"><tspan fill="#9fb8ff">return</tspan> fib(n-1) + fib(n-2);</text>
-              <text x="28" y="182" fill="#ecebe6">}</text>
-              <text x="28" y="232" fill="#8fc79a">$ ./fib</text>
-              <text x="28" y="256" fill="#a9a79f">0 1 1 2 3 5 8 13 21 34</text>
-              <rect x="206" y="244" width="9" height="16" fill="#ecebe6"/>
+            <defs>
+              <radialGradient id="ch" cx=".5" cy="-.1" r="1.1"><stop offset="0" stop-color="#2e1065"/><stop offset=".25" stop-color="#1e1b4b"/><stop offset=".6" stop-color="#0b0817"/><stop offset="1" stop-color="#050308"/></radialGradient>
+              <radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8b5cf6" stop-opacity=".45"/><stop offset="1" stop-color="#8b5cf6" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#ch)"/>
+            <circle cx="200" cy="140" r="130" fill="url(#glow)"/>
+            <g fill="#fff"><circle cx="48" cy="60" r="1.2"/><circle cx="312" cy="36" r="1"/><circle cx="140" cy="28" r="1.3"/><circle cx="352" cy="96" r="1.1"/><circle cx="78" cy="132" r=".9"/><circle cx="250" cy="56" r=".8"/></g>
+            <circle cx="200" cy="140" r="62" fill="none" stroke="#a78bfa" stroke-width="2"/>
+            <path d="M200 140 V104 M200 140 L226 152" stroke="#f5f3ff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="200" cy="140" r="4" fill="#f5f3ff"/>
+            <g font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#f5f3ff" text-anchor="middle">
+              <rect x="138" y="228" width="124" height="34" rx="17" fill="#8b5cf6" fill-opacity=".22" stroke="#8b5cf6" stroke-opacity=".5"/>
+              <text x="200" y="250">17 × 4 = ?</text>
             </g>
           </svg>
         </div>
         <div class="info">
-          <div class="num mono"><span>05</span><span>Foundations</span><span>2025</span></div>
-          <h3>C Programming</h3>
-          <p class="kicker">110 programs, from first loop to file I/O</p>
-          <p class="desc">This is where I started. It’s a collection of C programs that goes from printing numbers to recursion, pointers, structs, matrix work and reading and writing files.</p>
+          <div class="num mono"><span>05</span><span>Mobile · App</span><span>2026</span></div>
+          <h3>Chirpy</h3>
+          <p class="kicker">A puzzle alarm clock for iPhone</p>
+          <p class="desc">An alarm that won’t stop until you solve a puzzle, and one puzzle makes you get out of bed and scan a real object. There’s no account, analytics or tracking, and all your data stays on the phone.</p>
           <ul class="points">
-            <li>Recursion: factorial, Fibonacci, and loops rewritten as recursion</li>
-            <li>Pointers and call-by-reference, 2D arrays and matrix multiplication and transposes</li>
-            <li>Structs for student, bank and cricketer records, plus file handling with CSV export</li>
+            <li>Five wake-up puzzles: Math, Typing, Color Match, Find the Color and Scan an Object</li>
+            <li>The scan puzzle uses Apple’s Vision framework on the device. Each frame is checked and then thrown away</li>
+            <li>Privacy policy and support site written and designed alongside the app</li>
           </ul>
-          <div class="tags"><span>C</span><span>Algorithms</span><span>Data structures</span></div>
+          <div class="tags"><span>Flutter</span><span>Dart</span><span>Apple Vision</span><span>On-device ML</span><span>Privacy-first</span></div>
           <div class="actions">
-            <a href="https://github.com/rudrakshipatel/C-Programming" target="_blank" rel="noopener">Browse the programs <span aria-hidden="true">↗</span></a>
+            <a href="https://rudrakshipatel.github.io/chirpy-privacy/" target="_blank" rel="noopener">Privacy site <span aria-hidden="true">↗</span></a>
+            <a href="https://rudrakshipatel.github.io/chirpy-privacy/support.html" target="_blank" rel="noopener">Support <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </article>
@@ -428,21 +430,21 @@
       <div class="about-grid reveal">
         <p class="statement">I like projects where the details matter: a clue revealed at the right moment, an alarm that <em>actually</em> gets you up, a privacy policy that’s short enough to read.</p>
         <div class="about-copy">
-          <p>I work across the whole product. That means designing the interface, building the app, setting up the database and writing the support pages that go with it. My projects so far include cross-platform Flutter, native iPhone apps and full-stack web built on Next.js and Supabase.</p>
+          <p>I work across the whole product. That means designing the interface, building the app, setting up the database and writing the support pages that go with it. My projects so far include native SwiftUI apps, cross-platform Flutter and full-stack web built on Next.js and Supabase.</p>
           <p>Wherever I can, I build offline-first, keep data on the device and use on-device ML instead of sending data to a server. Software should earn trust and not ask for it.</p>
         </div>
       </div>
 
       <div class="skills reveal">
-        <div><span class="mono">01</span><h4>Mobile</h4><ul><li>Flutter &amp; Dart</li><li>iOS apps</li><li>Apple Vision</li><li>Google ML Kit</li></ul></div>
+        <div><span class="mono">01</span><h4>Mobile</h4><ul><li>SwiftUI &amp; Swift</li><li>Flutter &amp; Dart</li><li>App Clips &amp; StoreKit</li><li>Apple Vision</li></ul></div>
         <div><span class="mono">02</span><h4>Web</h4><ul><li>Next.js &amp; React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Framer Motion</li></ul></div>
-        <div><span class="mono">03</span><h4>Backend &amp; cloud</h4><ul><li>Supabase &amp; Postgres</li><li>Row-level security</li><li>Firebase messaging</li><li>Vercel · GitHub Pages</li></ul></div>
-        <div><span class="mono">04</span><h4>Foundations</h4><ul><li>C</li><li>Algorithms</li><li>Data structures</li><li>UI &amp; product design</li></ul></div>
+        <div><span class="mono">03</span><h4>Backend &amp; cloud</h4><ul><li>Supabase &amp; Postgres</li><li>Edge functions &amp; cron</li><li>Row-level security</li><li>Push notifications</li></ul></div>
+        <div><span class="mono">04</span><h4>Product</h4><ul><li>UI &amp; product design</li><li>Landing pages &amp; SEO</li><li>Waitlists &amp; launches</li><li>Privacy &amp; support sites</li></ul></div>
       </div>
 
       <div class="principles reveal">
         <div><span class="mono">Principle</span><h5>Privacy by default</h5><p>No accounts unless they’re needed. No trackers. Data stays on the device whenever possible.</p></div>
-        <div><span class="mono">Principle</span><h5>Works offline</h5><p>Demo modes, local storage and on-device models mean the app works without a network.</p></div>
+        <div><span class="mono">Principle</span><h5>Works offline</h5><p>Local storage and on-device models mean the app works without a network.</p></div>
         <div><span class="mono">Principle</span><h5>Calm interfaces</h5><p>Fewer, clearer choices, especially in stressful moments like labor or a 6 a.m. alarm.</p></div>
       </div>
     </div>
@@ -453,11 +455,11 @@
     <div class="wrap">
       <div class="head"><h2>Journey</h2><span class="mono">Most recent first</span></div>
       <ol class="timeline reveal">
-        <li><span class="mono">Sep 2026</span><span><b>Hastakala for Android</b> <span class="t">— Smart India Hackathon 2026</span></span><span class="mono">Flutter</span></li>
-        <li><span class="mono">Jun 2026</span><span><b>Chirpy</b> <span class="t">— puzzle alarm clock for iPhone</span></span><span class="mono">iOS</span></li>
+        <li><span class="mono">Jul 2026</span><span><b>Cortex</b> <span class="t">— clinical-reasoning game, waitlist open</span></span><span class="mono">iOS</span></li>
+        <li><span class="mono">Jul 2026</span><span><b>Auree</b> <span class="t">— shared event camera, live at auree.live</span></span><span class="mono">iOS · Web</span></li>
+        <li><span class="mono">Jun 2026</span><span><b>Chirpy</b> <span class="t">— puzzle alarm clock</span></span><span class="mono">Flutter</span></li>
         <li><span class="mono">Jun 2026</span><span><b>Contractions</b> <span class="t">— labor contraction timer</span></span><span class="mono">iOS</span></li>
         <li><span class="mono">Apr 2026</span><span><b>DocRiddles</b> <span class="t">— daily medical mystery game, live on Vercel</span></span><span class="mono">Web</span></li>
-        <li><span class="mono">Sep 2025</span><span><b>C Programming</b> <span class="t">— started with 110 programs</span></span><span class="mono">C</span></li>
       </ol>
     </div>
   </section>

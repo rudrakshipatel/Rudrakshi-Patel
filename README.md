@@ -2,7 +2,7 @@
 
 A minimal, single-page portfolio in one self-contained `index.html`. It has no build step and no dependencies apart from Google Fonts.
 
-**Projects featured:** Hastakala (SIH 2026, Flutter), DocRiddles (Next.js + Supabase), Chirpy (iOS puzzle alarm), Contractions (iOS labor timer) and C Programming (110 programs).
+**Projects featured:** Cortex (SwiftUI clinical-reasoning game), Auree (shared event camera), DocRiddles (Next.js + Supabase), Contractions (iOS labor timer) and Chirpy (puzzle alarm clock).
 
 ## Preview locally
 
